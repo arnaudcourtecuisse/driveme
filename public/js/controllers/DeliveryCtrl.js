@@ -63,13 +63,14 @@ angular.module('DeliveryCtrl', ['DataService'])
     if(possibleDelivery.getHours() > store.closingTime.getHours()) {
       $scope.nextWeek.shift();
     }
-    $scope.d  ata.chosenDay = $scope.nextWeek[0];
+    $scope.data.chosenDay = $scope.nextWeek[0];
     $scope.updateHours();
   });
 
   $scope.updateHours = () => {
-    if($scope.data.chosenDay.label==='aujourd\'hui') {
-      $scope.timeRange = getTimeRange(dateAfter(new Date(), 1), store.closingTime);
+    const possibleDelivery = dateAfter(new Date(), 1);
+    if($scope.data.chosenDay.label==='aujourd\'hui' && possibleDelivery > $scope.data.store.openingTime) {
+      $scope.timeRange = getTimeRange(dateAfter(new Date(), 1), $scope.data.store.closingTime);
       $scope.data.chosenHour = $scope.timeRange[0];
     } else {
       $scope.timeRange = getTimeRange($scope.data.store.openingTime, $scope.data.store.closingTime);

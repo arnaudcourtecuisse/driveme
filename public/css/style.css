@@ -60,29 +60,29 @@
   background-color: #01768F;
 }
 
-
-.dm-list.category {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.dm-list.product {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.dm-list.store {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 .dm-list:first-child {
   padding-top: 15px;
 }
 .dm-list:last-child {
   padding-bottom: 15px;
 }
+
+.dm-list.category {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.dm-list.product, .dm-list.store {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.dm-list.store label {
+  width: 95%;
+}
 .dm-list label span {
   padding-left: 15px;
 }
+
 .dm-list .btn-info {
   margin-top: 5px;
   margin-bottom: 5px;
