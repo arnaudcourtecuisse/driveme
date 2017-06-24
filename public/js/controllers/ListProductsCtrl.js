@@ -1,5 +1,5 @@
-angular.module('ListNeedsCtrl', ['DataService'])
-.controller('ListNeedsController', ['$scope', '$location', 'Data', function($scope, $location, Data) {
+angular.module('ListProductsCtrl', ['DataService'])
+.controller('ListProductsController', ['$scope', '$location', 'Data', function($scope, $location, Data) {
 
   const userId = ''
   const availableTimespans = [
@@ -24,6 +24,6 @@ angular.module('ListNeedsCtrl', ['DataService'])
   };
 
   $scope.validateList = () => {
-    $location.path('/list-products');
+    $location.path('/list-needs');
   }
 }]);
