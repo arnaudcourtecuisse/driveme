@@ -3,11 +3,14 @@ angular.module('ListProductsCtrl', ['DataService'])
 
   $scope.data = {};
 
+  $scope.updatePrice = (item, vChange) => {
+    if(item && vChange) item.quantity = Math.max(0, item.quantity+vChange);
+    $scope.data.price = $scope.data.list.reduce((price, item) => price + item.quantity*item.price, 0);
+  }
+
   Data.getUserProductList().then((list) => {
     $scope.data.list = list;
+    $scope.updatePrice();
   });
 
-  $scope.validateList = () => {
-    $location.path('/list-needs');
-  }
 }]);

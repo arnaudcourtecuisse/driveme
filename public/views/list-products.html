@@ -1,19 +1,34 @@
 <div class="row dm-page-title">
   <div class="col-xs-12">
-    OUPSY... IL ME SEMBLE QUE<br>
-    <strong>TU VAS BIENTÔT MANQUER DE...</strong>
+    MON BEL AMOUR, DIS-MOI<br>
+    <strong>SI JE NE ME TROMPE PAS...</strong>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="check-box dm-list" ng-repeat="item in data.list"><label>
-      <input type="checkbox" ng-model="item.checked">
-      <span>{{item.productCategory}}</span>
-    </label></div>
-  </div>
-  <div class="col-xs-6 col-xs-offset-3"
-    ng-show="data.list && data.list.length>0"
-    ng-click="validateList()">
-    <button class="btn btn-info">Valider ma liste</button>
+<div class="dm-page-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dm-list product row" ng-repeat="item in data.list">
+        <div class="col-xs-4 no-padding">
+          <div class="col-xs-4 no-padding">
+            <button class="btn btn-info dm-btn" ng-click="updatePrice(item, -1)">-</button>
+          </div>
+          <div class="col-xs-4 list-label">
+            <span>{{item.quantity}}</span>
+          </div>
+          <div class="col-xs-4 no-padding">
+            <button class="btn btn-info dm-btn" ng-click="updatePrice(item, 1)">+</button>
+          </div>
+        </div>
+        <div class="col-xs-8 list-label">
+          <span>{{item.product}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12" ng-show="data.price">
+      <div class="dm-total">TOTAL TTC : {{data.price.toFixed(2)}} €</div>
+    </div>
+    <div class="col-xs-12" ng-show="data.price">
+      <button class="btn btn-info dm-btn dm-validate">VALIDER</button>
+    </div>
   </div>
 </div>

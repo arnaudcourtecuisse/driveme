@@ -16,16 +16,20 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="check-box dm-list" ng-repeat="item in data.list"><label>
-      <input type="checkbox" ng-model="item.checked">
-      <span>{{item.category}}</span>
-    </label></div>
-  </div>
-  <div class="col-xs-6 col-xs-offset-3"
-    ng-show="data.list && data.list.length>0"
-    ng-click="validateList()">
-    <button class="btn btn-info">Valider ma liste</button>
+<div class="dm-page-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="check-box dm-list category" ng-repeat="item in data.list"><label>
+        <input type="checkbox" ng-model="item.checked">
+        <span>{{item.category}}</span>
+      </label></div>
+    </div>
+    <div class="col-xs-12">
+      <button class="btn btn-info dm-btn dm-validate"
+        ng-show="data.list && data.list.length>0"
+        ng-click="validateList()">
+        VALIDER
+      </button>
+    </div>
   </div>
 </div>

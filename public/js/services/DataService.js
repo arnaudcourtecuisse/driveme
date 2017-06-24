@@ -40,7 +40,7 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
     {category: 'Essuie-tout', product: 'Okay 3 rouleaux demi-feuille', quantity: 1, price: 1},
   ];
 
-  let userList;
+  let userList = userHabits.slice(0,2);
   const setUserList = (list) => {
     userList = list.map(item => userHabits.filter(habit => habit.category === item)[0]);
   };

@@ -1,6 +1,7 @@
 
-body {
-
+.no-padding {
+  padding-left: 0!important;
+  padding-right: 0!important;
 }
 
 .dm-container {
@@ -40,12 +41,34 @@ body {
   font-size: 20px;
 }
 
-.dm-list {
+.span-select {
+  background-color: #FBF464;
+}
+.span-select select {
+  margin: 15px 0;
+}
+
+.dm-page-content {
   background-color: #F5F9FA;
   margin-left: 30px;
+  margin-right: 30px;  
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.dm-btn {
+  background-color: #01768F;
+}
+
+
+.dm-list.category {
   padding-left: 30px;
-  margin-right: 30px;
   padding-right: 30px;
+}
+
+.dm-list.product {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .dm-list:first-child {
   padding-top: 15px;
@@ -56,9 +79,21 @@ body {
 .dm-list label span {
   padding-left: 15px;
 }
-.span-select {
-  background-color: #FBF464;
+.dm-list .btn-info {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.span-select select {
-  margin: 15px 0;
+.dm-list .list-label {
+  padding-top: 10px;
+}
+
+.dm-btn.dm-validate {
+  width: 100%;
+  font-size: 20px;
+}
+
+.dm-total {
+  float: right;
+  padding-bottom: 5px;
+  font-weight: bold;
 }
