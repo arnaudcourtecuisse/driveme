@@ -1,7 +1,6 @@
 angular.module('ListNeedsCtrl', ['DataService'])
 .controller('ListNeedsController', ['$scope', '$location', 'Data', function($scope, $location, Data) {
 
-  const userId = ''
   const availableTimespans = [
     {value: -1, label: 'Je fais mes course pour...'},
     {value: 1, label: 'aujourd\'hui'},
@@ -16,14 +15,19 @@ angular.module('ListNeedsCtrl', ['DataService'])
 
   $scope.getList = (duration) => {
     if(duration>-1) {
-      Data.getNeedList(userId, duration).then((list => {
-        $scope.data.list = list.map(cat => ({productCategory: cat, checked: true}));
+      Data.getNeedList(duration).then((list => {
+        $scope.data.list = list.map(cat => ({category: cat, checked: true}));
         $scope.$apply();
       }));    
     }
   };
 
   $scope.validateList = () => {
+    Data.setUserList(
+      $scope.data.list
+      .filter(item => item.checked)
+      .map(item => item.category)
+    );
     $location.path('/list-products');
   }
 }]);
