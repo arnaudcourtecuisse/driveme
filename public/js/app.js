@@ -1,4 +1,5 @@
 angular.module('driveme', [
   'ngRoute', 'DataService', 'appRoutes', 'MainCtrl',
-  'ListNeedsCtrl', 'ListProductsCtrl', 'ListStoresCtrl', 'DeliveryCtrl'
+  'ListNeedsCtrl', 'ListProductsCtrl', 'ListStoresCtrl',
+  'DeliveryCtrl', 'PaymentCtrl'
 ]);

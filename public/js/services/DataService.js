@@ -87,9 +87,9 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
     deliveryDate = dt;
   }
 
-  const getDeliveryDate = () => deliveryDate;
+  const getDeliveryDate = () => $q.when(deliveryDate);
 
-  const getUserCart = () => userCart;
+  const getUserCart = () => $q.when(userCart);
 
   return {
     getEstimatedNeedList, setNeedList, // define needs

@@ -21,6 +21,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     templateUrl: 'views/delivery.html',
     controller: 'DeliveryController',
   })
+  .when('/payment', {
+    templateUrl: 'views/payment.html',
+    controller: 'PaymentController',
+  })
 
 	$locationProvider.html5Mode(true);
 

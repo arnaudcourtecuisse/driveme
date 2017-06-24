@@ -78,12 +78,12 @@ angular.module('DeliveryCtrl', ['DataService'])
     }
   }
   $scope.validate = () => {
-    const [h,m] = $scope.data.chosenHour.spit(':').map(x=>parseInt(x));
+    const [h,m] = $scope.data.chosenHour.split(':').map(x=>parseInt(x));
     const deliveryDate = $scope.data.chosenDay.value;
     deliveryDate.setHours(h);
     deliveryDate.setMinutes(m);
     Data.setDeliveryDate(deliveryDate);
-    $location.path('/list-stores');
+    $location.path('/payment');
   };
 
 }]);
