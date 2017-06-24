@@ -2,10 +2,10 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
 
   const setUserId = () => {};
 
-  const getFavoriteShops = () => $q.when([
-    { name: 'MONOPRIX - RUE DE LA BOÉTIE', zipCode: '75008' },
-    { name: 'MONOPRIX - RUE DU BAC', zipCode: '75007' },
-    { name: 'MONOPRIX - RUE DU COMMERCE', zipCode: '75015' },
+  const getUserStoreList = () => $q.when([
+    { id: 1, name: 'Monoprix - rue de la Boétie', missingProducts: [] },
+    { id: 2, name: 'Monoprix - rue du Bac', missingProducts: ['Beurre doux Président 250g'] },
+    { id: 3, name: 'Monoprix - rue du Commerce', missingProducts: ['Beurre doux Président 250g'] },
   ]);
 
   const getNeedList = (duration) => {
@@ -40,15 +40,26 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
     {category: 'Essuie-tout', product: 'Okay 3 rouleaux demi-feuille', quantity: 1, price: 1},
   ];
 
-  let userList = userHabits.slice(0,2);
+  let userSelection = userHabits.slice(0,2);
   const setUserList = (list) => {
-    userList = list.map(item => userHabits.filter(habit => habit.category === item)[0]);
+    userSelection = list.map(item => userHabits.filter(habit => habit.category === item)[0]);
   };
   
   const getUserProductList = () => {
-    return $q.when(userList);
+    return $q.when(userSelection);
   };
 
-  return { getFavoriteShops, getNeedList, setUserList, getUserProductList };
+  let userCart = userHabits.slice(0,2);
+  const setUserCart = (cart) => {
+    userCart = cart;
+  }
+
+  let userStore;
+  
+  const setUserStore = (store) => {
+    userStore = store;
+  }
+
+  return { getUserStoreList, getNeedList, setUserList, getUserProductList, setUserCart };
 
 }]);

@@ -28,7 +28,10 @@
       <div class="dm-total">TOTAL TTC : {{data.price.toFixed(2)}} €</div>
     </div>
     <div class="col-xs-12" ng-show="data.price">
-      <button class="btn btn-info dm-btn dm-validate">VALIDER</button>
+      <button class="btn btn-info dm-btn dm-validate"
+        ng-click="validate()">
+        VALIDER
+      </button>
     </div>
   </div>
 </div>

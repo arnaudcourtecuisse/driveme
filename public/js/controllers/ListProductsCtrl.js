@@ -13,4 +13,8 @@ angular.module('ListProductsCtrl', ['DataService'])
     $scope.updatePrice();
   });
 
+  $scope.validate = () => {
+    Data.setUserCart($scope.data.list);
+    $location.path('/list-stores');
+  }
 }]);

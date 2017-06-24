@@ -13,6 +13,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     templateUrl: 'views/list-products.html',
     controller: 'ListProductsController'
   })
+  .when('/list-stores', {
+    templateUrl: 'views/list-stores.html',
+    controller: 'ListStoresController'
+  })
 
 	$locationProvider.html5Mode(true);
 

@@ -65,11 +65,15 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-
 .dm-list.product {
   padding-left: 15px;
   padding-right: 15px;
 }
+.dm-list.store {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .dm-list:first-child {
   padding-top: 15px;
 }

@@ -1,0 +1,30 @@
+<div class="row dm-page-title">
+  <div class="col-xs-12">
+    PARMI TES MONOP' CHÉRIS, CELUI-CI<br>
+    <strong>RÉPOND À TOUTES TES ENVIES</strong>
+  </div>
+</div>
+<div class="dm-page-content">
+  <div class="row">
+  <div class="col-xs-12">
+      <div class="dm-list store row" ng-repeat="store in data.list">
+        <div class="col-xs-12">
+          <div class="radio">
+            <label>
+              <input type="radio" ng-model="data.store" ng-value="store">
+              <div class="store-label">
+                <div class="store-name"><strong>{{store.name.toUpperCase()}}</strong></div>
+                <div class="store-missing" ng-show="store.missingProducts.length>0">
+                  Je n'ai plus de {{store.missingProducts.join(', ')}}
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12" ng-show="data.store">
+      <button class="btn btn-info dm-btn dm-validate">VALIDER</button>
+    </div>
+  </div>
+</div>
