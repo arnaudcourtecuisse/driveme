@@ -1,0 +1,69 @@
+<div class="row dm-page-title">
+  <div class="col-xs-12">
+    SOYONS MAINTENANT PRÉCIS SUR<br>
+    <strong>LA NATURE DE NOTRE RELATION</strong>
+  </div>
+</div>
+<div class="dm-page-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dm-list store row"><div class="col-xs-12">
+        <div class="radio"><label>
+          <input type="radio" ng-model="data.deliveryMode" value="delivery">
+          <div class="store-label">
+            <div class="store-name"><strong>LIVRAISON À DOMICILE</strong></div>
+          </div>
+        </label></div>
+      </div></div>
+    </div>
+    <div class="col-xs-12" ng-show="data.deliveryMode==='delivery'">
+      <div>JOUR ET H DU <em>DATE</em>:</div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <select class="form-control"
+              ng-options="day as day.label for day in nextWeek"
+              ng-model="data.chosenDay",
+              ng-change="updateHours()">
+            </select>
+          </div>          
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <select class="form-control"
+              ng-options="t for t in data.deliveryTimeRange"
+              ng-model="data.timespan"
+              ng-change="getList(data.timespan.value)">
+            </select>
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="dm-list store row"><div class="col-xs-12">
+        <div class="radio"><label>
+          <input type="radio" ng-model="data.deliveryMode" value="pick-up">
+          <div class="store-label">
+            <div class="store-name"><strong>RETRAIT EN MAGASIN</strong></div>
+          </div>
+        </label></div>
+      </div></div>
+    </div>
+    <div class="col-xs-12" ng-show="data.deliveryMode==='pick-up'">
+      <div>JOUR ET H DU <em>DATE</em>:</div>
+      <div class="form-group">
+        <select class="form-control"
+          ng-options="t for t in data.pickUpTimeRange"
+          ng-model="data.timespan"
+          ng-change="getList(data.timespan.value)">
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-12" ng-show="data.deliveryMode">
+      <button class="btn btn-info dm-btn dm-validate"
+        ng-click="validate()">
+        VALIDER
+      </button>
+    </div>
+  </div>
+</div>

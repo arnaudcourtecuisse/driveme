@@ -1,1 +1,4 @@
-angular.module('driveme', ['ngRoute', 'appRoutes', 'MainCtrl', 'ListNeedsCtrl', 'ListProductsCtrl', 'ListStoresCtrl', 'DataService']);
+angular.module('driveme', [
+  'ngRoute', 'DataService', 'appRoutes', 'MainCtrl',
+  'ListNeedsCtrl', 'ListProductsCtrl', 'ListStoresCtrl', 'DeliveryCtrl'
+]);

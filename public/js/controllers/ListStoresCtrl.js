@@ -10,7 +10,7 @@ angular.module('ListStoresCtrl', ['DataService'])
 
   $scope.validate = () => {
     Data.setUserStore($scope.data.store);
-    $location.path('/list-stores');
+    $location.path('/delivery');
   };
 
 }]);

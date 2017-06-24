@@ -6,7 +6,7 @@
 </div>
 <div class="dm-page-content">
   <div class="row">
-  <div class="col-xs-12">
+    <div class="col-xs-12">
       <div class="dm-list store row" ng-repeat="store in data.list">
         <div class="col-xs-12">
           <div class="radio">
@@ -24,7 +24,10 @@
       </div>
     </div>
     <div class="col-xs-12" ng-show="data.store">
-      <button class="btn btn-info dm-btn dm-validate">VALIDER</button>
+      <button class="btn btn-info dm-btn dm-validate"
+        ng-click="validate()">
+        VALIDER
+      </button>
     </div>
   </div>
 </div>

@@ -17,6 +17,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     templateUrl: 'views/list-stores.html',
     controller: 'ListStoresController'
   })
+  .when('/delivery', {
+    templateUrl: 'views/delivery.html',
+    controller: 'DeliveryController',
+  })
 
 	$locationProvider.html5Mode(true);
 

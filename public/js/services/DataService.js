@@ -2,11 +2,34 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
 
   const setUserId = () => {};
 
-  const getUserStoreList = () => $q.when([
-    { id: 1, name: 'Monoprix - rue de la Boétie', missingProducts: [] },
-    { id: 2, name: 'Monoprix - rue du Bac', missingProducts: ['Beurre doux Président 250g'] },
-    { id: 3, name: 'Monoprix - rue du Commerce', missingProducts: ['Beurre doux Président 250g'] },
-  ]);
+  let stores = [
+    {
+      name: 'Monoprix - rue de la Boétie',
+      openingTime: '2017-06-25T09:00:00+0200',
+      closingTime: '2017-06-25T22:00:00+0200',
+      deliveryTime: '2017-06-25T18:00:00+0200',
+      pickUpTime: '2017-06-25T17:00:00+0200',
+      missingProducts: [],
+    },
+    {
+      name: 'Monoprix - rue du Bac',
+      openingTime: '2017-06-25T09:00:00+0200',
+      closingTime: '2017-06-25T22:00:00+0200',
+      deliveryTime: '2017-06-25T18:00:00+0200',
+      pickUpTime: '2017-06-25T17:00:00+0200',
+      missingProducts: ['Beurre doux Président 250g'],
+    },
+    {
+      name: 'Monoprix - rue du Commerce',
+      openingTime: '2017-06-25T09:00:00+0200',
+      closingTime: '2017-06-25T22:00:00+0200',
+      deliveryTime: '2017-06-25T18:00:00+0200',
+      pickUpTime: '2017-06-25T17:00:00+0200',
+      missingProducts: ['Beurre doux Président 250g'],
+    },
+  ];
+
+  const getUserStoreList = () => $q.when(stores);
 
   const getNeedList = (duration) => {
     const get = () => {
@@ -45,21 +68,22 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
     userSelection = list.map(item => userHabits.filter(habit => habit.category === item)[0]);
   };
   
-  const getUserProductList = () => {
-    return $q.when(userSelection);
-  };
+  const getUserProductList = () => $q.when(userSelection);
+
 
   let userCart = userHabits.slice(0,2);
   const setUserCart = (cart) => {
     userCart = cart;
   }
 
-  let userStore;
+  let userStore = stores[0];
   
   const setUserStore = (store) => {
     userStore = store;
   }
 
-  return { getUserStoreList, getNeedList, setUserList, getUserProductList, setUserCart };
+  const getUserStore = () => $q.when(userStore);
+
+  return { getUserStoreList, getNeedList, setUserList, getUserProductList, setUserCart, setUserStore, getUserStore };
 
 }]);
