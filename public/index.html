@@ -1,41 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <base href="/">
 
-	<title>Driveme</title>
+  <title>driveme</title>
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
-	<!-- JS -->
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-route/angular-route.min.js"></script>
+  <!-- JS -->
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-route/angular-route.min.js"></script>
 
-	<!-- ANGULAR CUSTOM -->
-	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/services/NerdService.js"></script>
-	<script src="js/appRoutes.js"></script>
-	<script src="js/app.js"></script>
+  <!-- ANGULAR CUSTOM -->
+  <script src="js/controllers/MainCtrl.js"></script>
+  <script src="js/controllers/ListNeedsCtrl.js"></script> 
+  <script src="js/services/DataService.js"></script>
+  <script src="js/appRoutes.js"></script>
+  <script src="js/app.js"></script>
 </head>
 <body ng-app="driveme" ng-controller="MainController">
-<div class="container">
-	
-	<!-- HEADER -->
-	<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Driveme</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="/">Page 1</a></li>
-			<li><a href="/">Page 2</a></li>
-		</ul>
-	</nav>
+<div class="container dm-container">
+  
+  <!-- HEADER -->
+  <nav class="navbar navbar-inverse">
+    <div class="row navbar-title">
+      <div class="col-xs-12 dm-title"><strong>DRIVE</strong>ME</div>
+      <div class="col-xs-12 dm-subtitle"><span>avec</span> <img class="logo" src="image/logo-monoprix.png"></div>
+    </div>
+  </nav>
 
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
+  <!-- ANGULAR DYNAMIC CONTENT -->
+  <div ng-view></div>
 
 </div>
 </body>

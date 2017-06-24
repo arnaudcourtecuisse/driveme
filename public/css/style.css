@@ -1,1 +1,64 @@
-body { padding-top:30px; }
+
+body {
+
+}
+
+.dm-container {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left:0;
+  padding-right: 0;
+}
+
+.navbar {
+  margin: 0;
+  padding: 15px 0;
+  border: none;
+  background-color: white;
+  color: #EC1B24;
+  text-align: center;
+}
+
+.navbar .dm-title {
+  font-size: 50px;
+  margin-bottom: -20px;
+}
+
+.navbar .dm-subtitle {
+  font-size: 35px;
+}
+.navbar img.logo {
+  max-height: 19px;
+}
+
+.dm-page-title {
+  padding: 20px 0;
+  background-color: #10778B;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.dm-list {
+  background-color: #F5F9FA;
+  margin-left: 30px;
+  padding-left: 30px;
+  margin-right: 30px;
+  padding-right: 30px;
+}
+.dm-list:first-child {
+  padding-top: 15px;
+}
+.dm-list:last-child {
+  padding-bottom: 15px;
+}
+.dm-list label span {
+  padding-left: 15px;
+}
+.span-select {
+  background-color: #FBF464;
+}
+.span-select select {
+  margin: 15px 0;
+}
