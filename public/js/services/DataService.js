@@ -1,8 +1,8 @@
-angular.module('DataService', []).factory('Data', ['$http', function($http) {
+angular.module('DataService', []).factory('Data', ['$http', '$q', function($http, $q) {
 
   const setUserId = () => {};
 
-  const getFavoriteShops = () => Promise.resolve([
+  const getFavoriteShops = () => $q.when([
     { name: 'MONOPRIX - RUE DE LA BOÉTIE', zipCode: '75008' },
     { name: 'MONOPRIX - RUE DU BAC', zipCode: '75007' },
     { name: 'MONOPRIX - RUE DU COMMERCE', zipCode: '75015' },
@@ -19,7 +19,7 @@ angular.module('DataService', []).factory('Data', ['$http', function($http) {
       list.push(...['Brosse à dent', 'Chocolat', 'Oignons', 'Essuie-tout']);
       return list;      
     }
-    return Promise.resolve(get());
+    return $q.when(get());
   }
 
   const userHabits = [
@@ -43,12 +43,10 @@ angular.module('DataService', []).factory('Data', ['$http', function($http) {
   let userList;
   const setUserList = (list) => {
     userList = list.map(item => userHabits.filter(habit => habit.category === item)[0]);
-    console.log('user list', userList);
   };
   
   const getUserProductList = () => {
-    console.log('got user list', userList);
-    return Promise.resolve(userList);
+    return $q.when(userList);
   };
 
   return { getFavoriteShops, getNeedList, setUserList, getUserProductList };

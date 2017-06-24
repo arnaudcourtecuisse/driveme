@@ -17,7 +17,6 @@ angular.module('ListNeedsCtrl', ['DataService'])
     if(duration>-1) {
       Data.getNeedList(duration).then((list => {
         $scope.data.list = list.map(cat => ({category: cat, checked: true}));
-        $scope.$apply();
       }));    
     }
   };

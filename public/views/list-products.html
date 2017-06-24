@@ -4,18 +4,6 @@
     <strong>TU VAS BIENTÔT MANQUER DE...</strong>
   </div>
 </div>
-<div class="row span-select">
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="form-group">
-      <select class="form-control"
-        ng-init="data.timespan = initTimespan"
-        ng-options="t as t.label for t in data.availableTimespans"
-        ng-model="data.timespan"
-        ng-change="getList(data.timespan.value)">
-      </select>
-    </div>
-  </div>
-</div>
 <div class="row">
   <div class="col-xs-12">
     <div class="check-box dm-list" ng-repeat="item in data.list"><label>
