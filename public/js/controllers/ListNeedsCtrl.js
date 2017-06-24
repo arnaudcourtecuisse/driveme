@@ -15,14 +15,14 @@ angular.module('ListNeedsCtrl', ['DataService'])
 
   $scope.getList = (duration) => {
     if(duration>-1) {
-      Data.getNeedList(duration).then((list => {
+      Data.getEstimatedNeedList(duration).then((list => {
         $scope.data.list = list.map(cat => ({category: cat, checked: true}));
       }));    
     }
   };
 
   $scope.validateList = () => {
-    Data.setUserList(
+    Data.setNeedList(
       $scope.data.list
       .filter(item => item.checked)
       .map(item => item.category)
