@@ -75,10 +75,14 @@ angular.module('DeliveryCtrl', ['DataService'])
     } else {
       $scope.timeRange = getTimeRange($scope.data.store.openingTime, $scope.data.store.closingTime);
       $scope.data.chosenHour = $scope.timeRange[0];
-  }
+    }
   }
   $scope.validate = () => {
-    Data.setUserStore($scope.data.store);
+    const [h,m] = $scope.data.chosenHour.spit(':').map(x=>parseInt(x));
+    const deliveryDate = $scope.data.chosenDay.value;
+    deliveryDate.setHours(h);
+    deliveryDate.setMinutes(m);
+    Data.setDeliveryDate(deliveryDate);
     $location.path('/list-stores');
   };
 

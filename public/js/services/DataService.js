@@ -84,6 +84,22 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
 
   const getUserStore = () => $q.when(userStore);
 
-  return { getUserStoreList, getNeedList, setUserList, getUserProductList, setUserCart, setUserStore, getUserStore };
+  let deliveryDate = new Date();
+  deliveryDate.setTime(deliveryDate.getTime()+3600000);
+
+  const setDeliveryDate = (dt) => {
+    deliveryDate = dt;
+  }
+
+  const getDeliveryDate = () => deliveryDate;
+
+  return {
+    getUserStoreList,
+    getNeedList, setUserList,
+    getUserProductList, setUserCart, 
+    getUserCart, setUserStore,
+    getUserStore, setDeliveryDate,
+    getDeliveryDate
+ };
 
 }]);
