@@ -3,7 +3,10 @@ angular.module('DataService', []).factory('Data', ['$http', '$q', function($http
   const products = [
     { category: 'beurre', product: 'beurre doux président 250g', quantity: 1, price: 2.34 },
     { category: 'lait', product: 'lait écrémé monoprixbio monop 1L', quantity: 1, price: 1.64 },
-    { category: 'kellogs' },
+    { category: 'kellogs', suggestions: [
+      { product: 'Special K Nature 750g', price: 3.16, picture: '/image/specialk1.jpg' },
+      { product: 'Special K Chocolat 300g', price: 2.81, picture: '/image/specialk2.jpg' }]
+    },
     { category: 'jambon', product: 'jambon 4 tranches, fleury m.', quantity: 2, price: 3.53 },
     { category: 'pq', product: 'lotus papier toilette blc pqt 6', quantity: 1, price: 1.79 },
     { category: 'rasoir', product: 'gillette le rasoir', quantity: 1, price: 4.32 },

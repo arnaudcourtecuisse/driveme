@@ -13,6 +13,17 @@ angular.module('ListProductsCtrl', ['DataService'])
     $scope.updatePrice();
   });
 
+  $scope.triggerList = (item) => {
+    item.showList = !item.showList;
+  }
+
+  $scope.selectSuggestion = (item, suggestion) => {
+    item.product = suggestion.product;
+    item.price = suggestion.price;
+    item.quantity = 0;
+    item.showList = false;
+  } 
+
   $scope.validate = () => {
     Data.setUserCart($scope.data.list);
     $location.path('/list-stores');

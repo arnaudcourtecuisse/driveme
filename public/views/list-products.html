@@ -25,9 +25,20 @@
               </div>
             </div>
             <div class="col-xs-8 dm-form-label ellipsis"
-              ng-class="{ 'missing-product': !item.product }">
+              ng-class="{ 'missing-product': !item.product }"
+              ng-click="triggerList(item);">
               <span>{{(item.product ? item.product : item.category).toUpperCase()}}</span>
               <span ng-if="!item.product"><strong>?</strong></span>
+            </div>
+            <div class="col-xs-8 col-xs-offset-4 suggestions" ng-if="item.showList">
+              <div class="row"
+                ng-repeat="suggestion in item.suggestions"
+                ng-click="selectSuggestion(item, suggestion)">
+                <div class="col-xs-3 no-padding">
+                  <img class="product-pic" src="{{suggestion.picture}}">
+                </div>
+                <div class="col-xs-9">{{suggestion.product}}</div>
+              </div>
             </div>
           </div>
         </div>

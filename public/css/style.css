@@ -106,6 +106,12 @@ body {
   padding-right: 15px;
 }
 
+.suggestions {
+  cursor: pointer;
+}
+.product-pic {
+  width: 100%;
+}
 .missing-product {
   color: #EC1B24;
   cursor: pointer;
