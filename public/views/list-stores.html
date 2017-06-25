@@ -4,7 +4,7 @@
     <strong>RÉPOND À TOUTES TES ENVIES</strong>
   </div>
 </div>
-<div class="dm-page-content">
+<div class="dm-page-content row">
   <div class="row">
     <div class="col-xs-12">
       <div class="dm-list store row" ng-repeat="store in data.list">
@@ -23,11 +23,11 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12" ng-show="data.store">
-      <button class="btn btn-info dm-btn dm-validate"
-        ng-click="validate()">
-        VALIDER
-      </button>
-    </div>
+  </div>
+  <div class="row" ng-show="data.store">
+    <button class="btn btn-info dm-btn dm-validate"
+      ng-click="validate()">
+      VALIDER
+    </button>
   </div>
 </div>

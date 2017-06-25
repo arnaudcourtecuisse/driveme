@@ -4,11 +4,39 @@
     <strong>LA LIVRAISON EST POUR MOI</strong>
   </div>
 </div>
-<div class="dm-page-content">
-  <div class="row">
-    <div class="col-xs-12">
-      LIVRAISON = OFFERT<br>
-      TOTAL = {{price.toFixed(2)}} €
+<div class="dm-page-content row">
+  <div class="row dm-payment-form">
+    <div class="col-xs-12 top-padding">
+      <div class="cart-summary"><strong>
+        LIVRAISON = OFFERT<br>
+        TOTAL = {{price.toFixed(2)}} €
+      </strong></div>
     </div>
+    <div class="col-xs-10 col-xs-offset-1 top-padding">
+      <img class="payment-icons" src="image/payments.png">
+    </div>
+    <div class="col-xs-8 top-padding"><div class="form-group">
+        <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+    </div></div>
+    <div class="col-xs-2 no-padding top-padding"><div class="form-group">
+        <input type="text" class="form-control" placeholder="000">
+    </div></div>
+    <div class="col-xs-2 top-padding">
+      <button class="btn btn-default help">?</button>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>
+          <div class="col-xs-4 no-padding dm-form-label">EXPIRE EN</div>
+          <div class="col-xs-4 no-padding"><input type="text" class="form-control" placeholder="MM/DD"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-info dm-btn dm-validate"
+      ng-click="validate()">
+      VALIDER
+    </button>
   </div>
 </div>

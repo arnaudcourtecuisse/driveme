@@ -4,9 +4,9 @@
     <strong>LA NATURE DE NOTRE RELATION</strong>
   </div>
 </div>
-<div class="dm-page-content">
+<div class="dm-page-content row">
   <div>
-    <div class="dm-list store row"><div class="col-xs-12">
+    <div class="dm-list store row"><div class="col-xs-12 no-padding-right">
       <div class="radio"><label>
         <input type="radio" ng-model="data.deliveryMode" value="delivery">
         <div class="store-label">
@@ -16,7 +16,7 @@
           <div class="col-xs-12" ng-show="data.deliveryMode==='delivery'">
             <div>JOUR ET H DU <em>DATE</em>:</div>
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-6 no-padding-right">
                 <div class="form-group">
                   <select class="form-control"
                     ng-options="day as day.label for day in nextWeek"
@@ -38,7 +38,7 @@
         </div>
       </label></div>
     </div>
-    <div class="dm-list store row"><div class="col-xs-12">
+    <div class="dm-list store row"><div class="col-xs-12 no-padding-right">
       <div class="radio"><label>
         <input type="radio" ng-model="data.deliveryMode" value="pick-up">
         <div class="store-label">
@@ -48,7 +48,7 @@
           <div class="col-xs-12" ng-show="data.deliveryMode==='pick-up'">
             <div>JOUR ET H DU <em>DATE</em>:</div>
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-6 no-padding-right">
                 <div class="form-group">
                   <select class="form-control"
                     ng-options="day as day.label for day in nextWeek"
@@ -72,12 +72,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12" ng-show="data.deliveryMode">
-      <button class="btn btn-info dm-btn dm-validate"
-        ng-click="validate()">
-        VALIDER
-      </button>
-    </div>
-  </div>
+    <button class="btn btn-info dm-btn dm-validate"
+      ng-disabled="!data.deliveryMode"
+      ng-click="validate()">
+      VALIDER
+    </button>
   </div>
 </div>

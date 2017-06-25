@@ -13,6 +13,15 @@ angular.module('ListNeedsCtrl', ['DataService'])
     availableTimespans,
   };
 
+  $scope.addItemIfNotEmpty = () => {
+    
+    $scope.data.list.push({
+      isNew: true,
+      category: $scope.data.newItem,
+      checked: true
+    })
+  }
+
   $scope.getList = (duration) => {
     if(duration>-1) {
       Data.getEstimatedNeedList(duration).then((list => {
