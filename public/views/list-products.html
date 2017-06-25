@@ -8,19 +8,28 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="dm-list product row" ng-repeat="item in data.list">
-        <div class="col-xs-4 no-padding">
-          <div class="col-xs-4 no-padding">
-            <button class="btn btn-info dm-btn" ng-click="updatePrice(item, -1)">-</button>
+          <div>
+            <div class="col-xs-4 no-padding">
+              <div class="col-xs-4 no-padding">
+                <button class="btn btn-info dm-btn"
+                  ng-click="updatePrice(item, -1)"
+                  ng-disabled="!item.product">-</button>
+              </div>
+              <div class="col-xs-4 dm-form-label">
+                <span>{{item.quantity || 0}}</span>
+              </div>
+              <div class="col-xs-4 no-padding">
+                <button class="btn btn-info dm-btn"
+                  ng-click="updatePrice(item, 1)"
+                  ng-disabled="!item.product">+</button>
+              </div>
+            </div>
+            <div class="col-xs-8 dm-form-label ellipsis"
+              ng-class="{ 'missing-product': !item.product }">
+              <span>{{(item.product ? item.product : item.category).toUpperCase()}}</span>
+              <span ng-if="!item.product"><strong>?</strong></span>
+            </div>
           </div>
-          <div class="col-xs-4 dm-form-label">
-            <span>{{item.quantity}}</span>
-          </div>
-          <div class="col-xs-4 no-padding">
-            <button class="btn btn-info dm-btn" ng-click="updatePrice(item, 1)">+</button>
-          </div>
-        </div>
-        <div class="col-xs-8 dm-form-label">
-          <span>{{item.product}}</span>
         </div>
       </div>
     </div>

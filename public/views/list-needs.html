@@ -22,7 +22,7 @@
       <div class="check-box dm-list category" ng-repeat="item in data.list">
         <label>
           <input type="checkbox" ng-model="item.checked">
-          <span>{{item.category}}</span>
+          <span>{{item.category.toUpperCase()}}</span>
         </label>
       </div>
       <div class="form-group dm-list category">

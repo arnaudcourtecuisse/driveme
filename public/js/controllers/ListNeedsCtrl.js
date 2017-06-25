@@ -1,5 +1,5 @@
 angular.module('ListNeedsCtrl', ['DataService'])
-.controller('ListNeedsController', ['$scope', '$location', 'Data', function($scope, $location, Data) {
+.controller('ListNeedsController', ['$scope', '$rootScope', '$location', 'Data', function($scope, $rootScope, $location, Data) {
 
   const availableTimespans = [
     {value: -1, label: 'Je fais mes course pour...'},
@@ -38,4 +38,17 @@ angular.module('ListNeedsCtrl', ['DataService'])
     );
     $location.path('/list-products');
   }
+
+  $scope.open = function() {
+    $rootScope.showModal = true;
+  };
+
+  $scope.ok = function() {
+    $rootScope.showModal = false;
+  };
+
+  $scope.cancel = function() {
+    $rootScope.showModal = false;
+  }
+
 }]);

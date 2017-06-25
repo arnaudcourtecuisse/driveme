@@ -1,4 +1,6 @@
-
+body {
+  text-transform: uppercase;
+}
 
 .no-padding {
   padding-left: 0!important;
@@ -58,6 +60,12 @@
   margin: 15px 0;
 }
 
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .dm-page-content {
   background-color: #F5F9FA;
   margin-left: 15px;
@@ -70,6 +78,10 @@
 
 .dm-btn {
   background-color: #01768F;
+}
+
+.dm-list {
+  font-weight: bold;
 }
 
 .dm-list.category {
@@ -94,6 +106,10 @@
   padding-right: 15px;
 }
 
+.missing-product {
+  color: #EC1B24;
+  cursor: pointer;
+}
 .dm-list.store label {
   width: 95%;
 }
