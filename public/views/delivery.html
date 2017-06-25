@@ -14,11 +14,11 @@
         </div>
         <div class="row">
           <div class="col-xs-12" ng-show="data.deliveryMode==='delivery'">
-            <div>JOUR ET H DU <em>DATE</em>:</div>
+            <div class="dm-date">JOUR & H DU <em>DATE</em> :</div>
             <div class="row">
               <div class="col-xs-6 no-padding-right">
                 <div class="form-group">
-                  <select class="form-control"
+                  <select class="form-control day-picker"
                     ng-options="day as day.label for day in nextWeek"
                     ng-model="data.chosenDay",
                     ng-change="updateHours()">
@@ -27,7 +27,7 @@
               </div>
               <div class="col-xs-6">
                 <div class="form-group">
-                  <select class="form-control"
+                  <select class="form-control day-picker"
                     ng-options="t for t in timeRange"
                     ng-model="data.chosenHour">
                   </select>
@@ -46,11 +46,11 @@
         </div>
         <div class="row">
           <div class="col-xs-12" ng-show="data.deliveryMode==='pick-up'">
-            <div>JOUR ET H DU <em>DATE</em>:</div>
+            <div class="dm-date">JOUR & H DU <em>DATE</em> :</div>
             <div class="row">
               <div class="col-xs-6 no-padding-right">
                 <div class="form-group">
-                  <select class="form-control"
+                  <select class="form-control day-picker"
                     ng-options="day as day.label for day in nextWeek"
                     ng-model="data.chosenDay",
                     ng-change="updateHours()">
@@ -59,7 +59,7 @@
               </div>
               <div class="col-xs-6">
                 <div class="form-group">
-                  <select class="form-control"
+                  <select class="form-control day-picker"
                     ng-options="t for t in timeRange"
                     ng-model="data.chosenHour">
                   </select>

@@ -40,6 +40,7 @@ body {
 
 .navbar .dm-subtitle {
   font-size: 35px;
+  text-transform: lowercase;
 }
 .navbar img.logo {
   max-height: 19px;
@@ -118,6 +119,13 @@ body {
 }
 .dm-list.store label {
   width: 95%;
+}
+.dm-date {
+  font-weight: bold;
+  color: #EC1B24;
+}
+.day-picker {
+  padding-left: 6px;
 }
 .dm-list label span {
   padding-left: 15px;
